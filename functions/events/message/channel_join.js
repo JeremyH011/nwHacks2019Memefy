@@ -15,7 +15,7 @@ const lib = require('lib')({token: process.env.STDLIB_TOKEN});
 module.exports = (user, channel, text = '', event = {}, botToken = null, callback) => {
 
   callback(null, {
-    text: `Hello <@${user}>, welcome to <#${channel}>! :relaxed:`
+    text: `Hello <@${user}>, welcome to <#${channel}>! :pregnat_woman:`
   });
 
 };
