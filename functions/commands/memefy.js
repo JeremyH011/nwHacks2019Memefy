@@ -21,6 +21,7 @@ module.exports = (user, channel, text = '', command = {}, botToken = null, callb
 	search.cse.list({ cx: '005405688461163377964:c8kxxacbuqw',
 										q: `${text} meme`,
 										searchType: 'image',
+										imgSize: 'medium',
 										num: 10 }).then((res) => {
 		const randItem = res.data.items[Math.floor(Math.random()*res.data.items.length)];
 		callback(null, {
@@ -28,7 +29,7 @@ module.exports = (user, channel, text = '', command = {}, botToken = null, callb
 				{
 					preText: text,
 					title: randItem.snippet,
-					image_url: randItem.image.thumbnailLink
+					image_url: randItem.image.thumbnailLink,
 				}
 			]
 		});
