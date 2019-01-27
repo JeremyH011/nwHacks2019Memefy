@@ -26,6 +26,14 @@ module.exports = (user, channel, text = '', event = {}, botToken = null, callbac
         // See https://api.slack.com/docs/message-attachments for more info.
       ]
     });
+  } else if (text.match(/help/i)){
+    callback(null, {
+      text: `Hey there! wain!`,
+      attachments: [
+        // You can customize your messages with attachments.
+        // See https://api.slack.com/docs/message-attachments for more info.
+      ]
+    });
   } else {
     callback(null, {});
   }
