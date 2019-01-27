@@ -60,6 +60,7 @@ module.exports = (context, callback) => {
   let user = event.user;
   let channel = event.channel || (event.item && event.item.channel) || 'general';
   let text = event.text || '';
+  let ts = event.ts;
 
   getBotToken(params.team_id, (err, botToken) => {
 
@@ -73,9 +74,11 @@ module.exports = (context, callback) => {
         channel: channel,
         text: text,
         event: event,
-        botToken: botToken
+        botToken: botToken,
+        ts: ts
       },
       (err, result) => {
+        console.log(result);
         if (err) {
           if (result && result.error && result.error.type === 'ClientError') {
             callback(err);
