@@ -1,4 +1,5 @@
 const ejs = require('ejs');
+fs = require('fs');
 const template = __dirname + '/../pages/index.ejs';
 
 const ENV = {
